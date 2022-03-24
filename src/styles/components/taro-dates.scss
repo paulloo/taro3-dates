@@ -1,0 +1,397 @@
+
+.taro-dates__wrap {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 56px;
+  }
+  .cal-month__scroll {
+      position: absolute;
+      top: 56px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+  }
+  .cal-week-monthes {
+  }
+  .taro-dates__cycle {
+    .cal-week-monthes {
+      padding-bottom: 90px;
+    }
+  }
+
+  .cal-week-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 56px;
+    line-height: 56px;
+    // border-bottom: 1px solid rgb(221, 221, 221);
+    background-color: #556a72;
+    color: #fff;
+    z-index: 110;
+  }
+
+  .cal-week-item {
+    width: 14.2857%;
+    margin-left: -1px;
+    text-align: center;
+    font-size: 24px;
+
+    &__active {
+      color: $color-brand;
+    }
+  }
+
+  .cal-month-title {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: #ffffff;
+  }
+
+  .cal-cycle-notice {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    line-height: 90px;
+    z-index: 109;
+    text-align: center;
+    font-size: 28px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  // day
+  .cal-day {
+    width: 14.2857%;
+    height: 110px;
+    // line-height: 110px;
+    float: left;
+    font-size: 28px;
+    color: rgb(72, 72, 72);
+    position: relative;
+    text-align: center;
+    border-radius: 7px;
+    &__txt {
+      height: 44px;
+      &-wrp {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+      }
+      &-price, &-holiday {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 20px;
+        overflow: hidden;
+      }
+      &-price {
+        bottom: 0;
+        color: #999;
+      }
+      &-holiday {
+        top: 0;
+        // color: #333333;
+      }
+
+    }
+    &__dir {
+      position: absolute;
+      z-index: 9;
+      top: -10px;
+      line-height: 20px;
+      padding: 3px;
+      font-size: 20px;
+      color: #fff;
+      background: rgba(0,0,0, 0.6);
+      border-radius: 3px;
+      white-space: nowrap;
+
+      &::after {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        content: "";
+        border: 8px solid transparent;
+        border-top-color: rgba(0,0,0, 0.6);
+      }
+
+      &.start {
+        right: 70%;
+        &::after {
+          transform: skewX(50deg);
+        }
+      }
+      &.end {
+        left: 70%;
+        &::after {
+          left: 0;
+          right: auto;
+          transform: skewX(-50deg);
+        }
+      }
+    }
+
+    &__cursor-default {
+      cursor: default;
+    }
+
+    &__default {
+      // border: 1px solid #e4e7e7;
+      color: #333333;
+      background: #fff;
+
+      &:hover {
+        background: #e4e7e7;
+        //   border: 1px solid #e4e7e7;
+        color: 'inherit';
+      }
+    }
+
+    &__hovered_offset {
+      background: #f4f5f5;
+      // border: 1px double #e4e7e7;
+      color: 'inherit';
+    }
+
+    &__outside {
+      border: 0;
+      background: #fff;
+      color: #999;
+
+      &:hover {
+        border: 0;
+      }
+    }
+
+    &__blocked_minimum_nights {
+      background: #fff;
+      // border: 1px solid #eceeee;
+      color: #cacccd;
+
+      &:hover {
+        background: #fff;
+        color: #cacccd;
+      }
+
+      &:active {
+        background: #fff;
+        color: #cacccd;
+      }
+    }
+
+    &__highlighted_calendar {
+      background: #82E0AA;
+      color: #186A3B;
+
+      &:hover {
+        background: #58D68D;
+        color: #186A3B;
+      }
+
+      &:active {
+        background: #58D68D;
+        color: #186A3B;
+      }
+    }
+
+    &__saturdayOfweek {
+      color: $color-brand;
+      .cal-day__dir {
+        &.end {
+          right: 0;
+          left: auto;
+        }
+      }
+    }
+
+    &__lastday_theme {
+      color: $color-brand;
+    }
+
+    &__selected_span {
+      background: #f5f5f5;
+      border-radius: 0;
+      // border: 1px double #f5f5f5;
+      // color: #fff;
+
+      &:hover {
+        background: #f5f5f5;
+        //   border: 1px double #f5f5f5;
+        // color: #fff;
+      }
+
+      &:active {
+        background: #f5f5f5;
+        //   border: 1px double #f5f5f5;
+        // color: #fff;
+      }
+    }
+
+    &__selected {
+      background: $color-brand;
+      // border: 1px double rgb(0, 166, 153);
+      color: #fff;
+
+      &:hover {
+        background: $color-brand;
+        // border: 1px double rgb(0, 166, 153);
+        color: #fff;
+      }
+
+      &:active {
+        background: $color-brand;
+        // border: 1px double rgb(0, 166, 153);
+        color: #fff;
+      }
+
+      .cal-day__txt-holiday, .cal-day__txt-price {
+        color: #fff;
+      }
+    }
+
+    &__hovered_span {
+      background: #f5f5f5;
+      // border: 1px double #f5f5f5;
+      color: #007a87;
+
+      &:hover {
+        background: #f5f5f5;
+        // border: 1px double #f5f5f5;
+        color: #007a87;
+      }
+
+      &:active {
+        background: #f5f5f5;
+        // border: 1px double #f5f5f5;
+        color: #007a87;
+      }
+    }
+
+    &__blocked_calendar {
+      background: #ffffff;
+      // border: 1px solid #cacccd;
+      color: #b2b2b2;
+      border-radius: 0;
+      &:hover {
+        background: #cacccd;
+        // border: 1px solid #cacccd;
+        color: #82888a;
+      }
+
+      &:active {
+        background: #cacccd;
+        // border: 1px solid #cacccd;
+        color: #82888a;
+      }
+    }
+
+    &__blocked-out_of_range {
+      background: #fff;
+      // border: 1px solid #eceeee;
+      color: #b2b2b2;
+
+      &:hover {
+        background: #fff;
+        // border: 1px solid #eceeee;
+        color: #cacccd;
+      }
+
+      &:active {
+        background: #fff;
+        // border: 1px solid #eceeee;
+        color: #cacccd;
+      }
+    }
+
+    &__hovered_start_first_possible_end {
+      background: #eceeee;
+      //   border: 1px double #eceeee;
+    }
+
+    &__hovered_start_blocked_min_nights {
+      background: #eceeee;
+      // border: 1px double #e4e7e7;
+    }
+
+    &__reserve, &__holiday {
+      // line-height: normal;
+      // line-height: 44px;
+    }
+
+    &__holiday {
+
+    }
+
+    // &__selected_start {}
+
+    // &__selected_end {}
+
+    // &__today {}
+
+    // &__firstDayOfWeek {}
+
+    &__lastDayOfWeek {
+      .cal-day__dir {
+        &.start {
+          left: 0;
+          right: auto;
+        }
+      }
+    }
+  }
+
+  // week
+  .cal-week {
+    margin-bottom: 10px;
+    // width: calc(100% + 7px);
+    // overflow: hidden;
+    &::after {
+      content: "\20";
+      display: block;
+      height: 0;
+      clear:both;
+    }
+  }
+
+  // month
+  .cal-month {
+    position: relative;
+    width: 100%;
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    padding-bottom: 16px;
+    margin-bottom: -16px;
+    background-color: #fff;
+    &__round {
+
+      .cal-day__selected_start {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        line-height: normal;
+      }
+      .cal-day__selected_end {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        // line-height: normal;
+      }
+    }
+  }
+
+
+
