@@ -1,6 +1,6 @@
 {
   "name": "taro-dates",
-  "version": "1.0.8",
+  "version": "3.0.0",
   "browser": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
@@ -12,11 +12,11 @@
     "dist",
     "types"
   ],
-	"templateInfo": {
-		"name": "default",
-		"typescript": true,
-		"css": "sass"
-	},
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "sass"
+  },
   "scripts": {
     "dev": "yarn run dev:lib",
     "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
@@ -37,10 +37,10 @@
   ],
   "author": "",
   "license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:paulloo/taro-dates.git"
-	},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:paulloo/taro-dates.git"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-json": "^4.1.0",
