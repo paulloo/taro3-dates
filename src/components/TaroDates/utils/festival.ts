@@ -275,8 +275,7 @@ const fnLunarDate = {
     calculate: function (q) {
         return tianGan[q % 10] + diZhi[q % 12]
     },
-    getGzYear: function (r, s, q) {
-        console.log(r)
+    getGzYear: function (s, q) {
         return this.calculate(s - 1900 + 36 - (q === s ? 0 : 1))
     },
     getGzMonth: function (q, r, s) {
@@ -369,7 +368,7 @@ const init = function (oDate) {
         animal: arrAnimals[(lunarInfo.lunarY - 4) % 12],               // 生肖
         gzDate: fnLunarDate.getGzDay(oDate),                              // 阴历日期
         gzMonth: fnLunarDate.getGzMonth(oDate, _year, _month),             // 阴历月份
-        gzYear: fnLunarDate.getGzYear(oDate, _year, lunarInfo.lunarYear), // 阴历年份
+        gzYear: fnLunarDate.getGzYear(_year, lunarInfo.lunarYear), // 阴历年份
         lunarYear: lunarInfo.lunarYear,                                      // 阴历数字年份
         lunarMonth: lunarInfo.lunarMonth,                                     // 阴历数字月份
         lunarDate: lunarInfo.lunarDay,                                       // 阴历数字日期

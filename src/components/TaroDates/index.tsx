@@ -107,6 +107,7 @@ export default class TaroDates extends React.PureComponent<
       "hovered-start-blocked-minimum-nights": (day, hoverDate) =>
         this.doesNotMeetMinNightsForHoveredStartDate(day, hoverDate),
     };
+
     const { currentMonth, visibleDays } = this.getStateForNewMonth(props);
 
     const chooseAvailableDate = getChooseAvailableDatePhrase(
@@ -188,7 +189,6 @@ export default class TaroDates extends React.PureComponent<
       numberOfMonths: prevNumberOfMonths,
       enableOutsideDays: prevEnableOutsideDays,
     } = this.props;
-
     const { hoverDate } = this.state;
     let { visibleDays } = this.state;
 
@@ -1122,6 +1122,7 @@ export default class TaroDates extends React.PureComponent<
     const firstDayOfWeek = this.getFirstDayOfWeek();
 
     const cycleNotices = this.tarnsCycle(cycle);
+
     return (
       <View
         className={classnames("taro-dates__wrap", {
@@ -1203,7 +1204,7 @@ TaroDates.defaultProps = {
   cycle: "",
   firstDayOfWeek: 0,
   weekDayFormat: "",
-  fromTop: "",
+  fromTop: 0,
   minimumNights: 0,
   numberOfMonths: 0,
   keepOpenOnDateSelect: false,
@@ -1240,7 +1241,7 @@ TaroDates.propTypes = {
   cycle: PropTypes.string,
   firstDayOfWeek: PropTypes.number,
   weekDayFormat: PropTypes.string,
-  fromTop: PropTypes.string,
+  fromTop: PropTypes.number,
   minimumNights: PropTypes.number,
   numberOfMonths: PropTypes.number,
   keepOpenOnDateSelect: PropTypes.bool,

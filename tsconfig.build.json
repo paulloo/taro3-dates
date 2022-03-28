@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "target": "es2017",
     "module": "es6",
-    "outDir": "./lib"
+    "outDir": "D:\\workspaces\\tcship\\ship.taro\\node_modules\\taro-dates\\lib"
   },
   "compileOnSave": false,
   "exclude": [
